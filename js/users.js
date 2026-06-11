@@ -6,55 +6,17 @@ const data = fetch("https://fakestoreapi.com/users").then((resolve) =>
   resolve.json(),
 );
 
-const viewFunc = (cartId, cartUserId, cartDate, cartProducts) => {
+const viewFunc = (
+  city,
+  street,
+  zipcode,
+  username,
+  passwd,
+  firstname,
+  lastname,
+  phone,
+) => {
   elViewSection.style.display = "flex";
-  const products = [];
-  let user;
-  function assignUser(attrUser) {}
-  fetch(`https://fakestoreapi.com/users/${cartUserId}`)
-    .then((resolve) => resolve.json())
-    .then((fetchedUser) => {
-      const constuser = fetchedUser.username;
-      user = constuser;
-      cartProducts.split(",").forEach((productId) => {
-        const product = fetch(`https://fakestoreapi.com/products/${productId}`)
-          .then((resolve) => resolve.json())
-          .then((product) => {
-            products.push(product.image);
-          });
-      });
-      const productsImages = products.map(
-        (url) => `<img src="${url}" class="item__image">`,
-      );
-      console.log(products);
-      elViewSection.innerHTML = `
-        <p
-          onclick="
-            {
-              elViewSection.style.display = 'none';
-            }
-          "
-          class="close"
-        >
-          x
-        </p>
-        <p>User/Owner: ${user}</p>
-        <p>Cart ID: ${cartId}</p>
-        <p>Date: ${cartDate}</p>
-        <p>Products:</p>
-        <div>
-          ${productsImages}
-        </div>
-  `;
-    });
-  cartProducts.split(",").forEach((productId) => {
-    const product = fetch(`https://fakestoreapi.com/products/${productId}`)
-      .then((resolve) => resolve.json())
-      .then((product) => {
-        products.push(product.image);
-      });
-  });
-  console.log(products);
   elViewSection.innerHTML = `
         <p
           onclick="
@@ -66,7 +28,14 @@ const viewFunc = (cartId, cartUserId, cartDate, cartProducts) => {
         >
           x
         </p>
-        <p>User/Owner: ${user}</p>
+        <p>Firstname: ${firstname}</p>
+        <p>Lastname: ${lastname}</p>
+        <p>Username: ${username}</p>
+        <p>Password: ${passwd}</p>
+        <p>Phone: ${phone}</p>
+        <p>City: ${city}</p>
+        <p>Street: ${street}</p>
+        <p>Zipcode: ${zipcode}</p>
   `;
 };
 
@@ -82,8 +51,8 @@ data.then((users) => {
           <p class="item__info">Name: ${user.name.firstname + " " + user.name.lastname}</p>
           <p class="item__info">Email: ${user.email}</p>
           <button onclick="{
-            
-            );}" class="view edit">View</button>
+            viewFunc('${user.address.city}', '${user.address.street}', '${user.address.zipcode}', '${user.username}', '${user.password}', '${user.name.firstname}', '${user.name.lastname}', '${user.phone}');
+          }" class="view edit">View</button>
         </div>
     `;
   });
