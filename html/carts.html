@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Admin panel</title>
+    <link rel="stylesheet" href="../css/carts.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1
+        onclick="
+          {
+            window.location.href = 'admin.html';
+          }
+        "
+      >
+        FakeStore
+      </h1>
+      <ul class="header__links">
+        <li><a href="admin.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="carts.html">Carts</a></li>
+        <li><a href="users.html">Users</a></li>
+      </ul>
+    </header>
+    <main>
+      <div id="view__section"></div>
+      <section id="dataContainer">
+        <h1 id="container__title">Loading...</h1>
+      </section>
+    </main>
+
+    <footer>
+      <p>absolutely useless footer</p>
+    </footer>
+
+    <script src="../js/carts.js"></script>
+  </body>
+</html>

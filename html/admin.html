@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Admin panel</title>
+    <link rel="stylesheet" href="../css/admin.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1
+        onclick="
+          {
+            window.location.href = 'admin.html';
+          }
+        "
+      >
+        FakeStore
+      </h1>
+      <ul class="header__links">
+        <li><a href="admin.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="carts.html">Carts</a></li>
+        <li><a href="users.html">Users</a></li>
+      </ul>
+    </header>
+    <main>
+      <section id="dataContainer">
+        <h1>Welcome!</h1>
+        <p>Choose where to administrate:</p>
+        <article>
+          <a href="products.html">Products</a>
+          <a href="carts.html">Carts</a>
+          <a href="users.html">Users</a>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>absolutely useless footer</p>
+    </footer>
+
+    <script src="../js/admin.js"></script>
+  </body>
+</html>

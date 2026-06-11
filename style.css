@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input {
+  padding: 5px 8px;
+  max-width: 200px;
+  border-radius: 25px;
+  border: 1px solid #000;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+button {
+  padding: 5px 8px;
+  width: 100px;
+  border-radius: 25px;
+  border: 1px solid #000;
+  background-color: #fafafa;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 25vh;
+  width: 30vw;
+  background-color: #f0f0f0;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin: 200px auto;
+}
